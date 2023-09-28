@@ -1,29 +1,47 @@
-react-content-editable
+react-hoverinfo
 =====================
 
-It's React component which support content editable div
+It's React wrapper component which support tooltip
 
 
 ## Install
 
 ```sh
-npm install reactjs-content-editable
+npm install react-hoverinfo
 ```
 
 ## Usage
 
+Import `react-hoverinfo` after installation.
+
 ```javascript
 import React, { useState } from 'react';
-import { ContentEditable } from "reactjs-content-editable";
+import { Tooltip } from "react-hoverinfo";
 
 function App() {
   const [html, setHtml] = useState("")
   return (
     <>
-      <ContentEditable 
-        html={html} 
-        onChange={(value: string) => setHtml(value)} 
-      />
+      <Tooltip id="main" />
+    </>
+  );
+}
+
+export default App;
+
+```
+
+Add `data-tooltip-id="<tooltip id>"` and `data-tooltip-content="<your placeholder>"` to your element.
+
+```javascript
+import React, { useState } from 'react';
+
+function Child() {
+  return (
+    <>
+      <button data-tooltip-id="main" data-tooltip-content={"Notification"}>
+        Button 1
+      </button>
     </>
   );
 }
@@ -35,21 +53,17 @@ export default App;
 ## Available props
 |prop|description|type|
 |--|----|----|
-|html|**required:** innerHTML of the editable element|String|
-|disabled|use true to disable editing|Boolean|
-|onChange|called whenever `innerHTML` changes|Function|
-|className|there is no default className are given, you can add your own|String|
-|style|style properties which support react style format, by default height is set to 200px|Object|
-|innerRef|if you want to control the element, you can pass ref|LegacyRef<HTMLDivElement> | React.RefObject<HTMLDivElement>|
+|id|**required:** this is is used to detect the target element|String|
+|className|you can add your className|String|
 
 ## Support
 If you are facing any issue, please contact [via linkedin ( Libin Prasanth )](https://www.linkedin.com/in/libinprasanth/).
 
 ## Examples
 
-Do you want to try **react-content-editable** before use ?
+Do you want to try **react-hoverinfo** before use ?
 
- * [Simple example](https://codesandbox.io/s/react-hoverinfo-v9f68x)
+[Example](https://codesandbox.io/s/react-hoverinfo-v9f68x)
 
 ## Donate!
 Like my Work! [Donate](https://www.paypal.me/LibinPrasanth) 
