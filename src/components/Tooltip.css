@@ -1,0 +1,21 @@
+.react-tooltip {
+    z-index: 99999;
+    visibility: hidden;
+    width: -moz-max-content;
+    width: max-content;
+    position: fixed;
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 13px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    will-change: opacity, visibility;
+    color: white;
+    background-color: rgba(34, 34, 34, .9);
+}
+
+.react-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+}
