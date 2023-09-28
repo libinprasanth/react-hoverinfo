@@ -63,7 +63,7 @@ If you are facing any issue, please contact [via linkedin ( Libin Prasanth )](ht
 
 Do you want to try **react-hoverinfo** before use ?
 
-[Example](https://codesandbox.io/s/react-hoverinfo-v9f68x)
+[Example](https://codesandbox.io/s/smoosh-flower-5mrz5p)
 
 ## Donate!
 Like my Work! [Donate](https://www.paypal.me/LibinPrasanth) 

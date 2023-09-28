@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import * as React from 'react'
 import './Tooltip.css'
 
 type TooltipProps = {
@@ -6,11 +6,11 @@ type TooltipProps = {
   className?: string
 }
 function Tooltip({ id, className = '' }: TooltipProps) {
-  const observerRef = useRef<MutationObserver | null>(null)
+  const observerRef = React.useRef<MutationObserver | null>(null)
   const addedTooltipElements = new WeakMap<HTMLElement, boolean>()
-  const [content, setContent] = useState('')
-  const [style, setStyle] = useState({})
-  useEffect(() => {
+  const [content, setContent] = React.useState('')
+  const [style, setStyle] = React.useState({})
+  React.useEffect(() => {
     const handleMutation = (mutationsList: MutationRecord[]) => {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList' || mutation.type === 'attributes') {
@@ -77,7 +77,7 @@ function Tooltip({ id, className = '' }: TooltipProps) {
     setStyle(() => ({}))
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('click', hideTooltip)
     return () => {
       document.removeEventListener('click', hideTooltip)
